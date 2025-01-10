@@ -4,7 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const app = express();
 
-// Updated CORS options to allow specific origin, you can also set it to true to all origins
+// Corrected CORS options for specific origin and methods
 const corsOptions = {
   origin: [
     "https://jttfront-gamma.vercel.app",
@@ -20,7 +20,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 const User = require("./schema");
-const port = process.env.PORT || 5000;
+
+const PORT = process.env.PORT || 5000; // Use dynamic port
 
 connectDB();
 
@@ -32,19 +33,16 @@ app.post("/submit", async (req, res) => {
       name,
       phone,
     });
-    console.log(newUser);
     await newUser.save();
     res.status(201).json({ message: "User Created", user: newUser });
   } catch (err) {
     console.error("Error with user creation:", err.message);
-    res.status(500).json({ error: "Server error", message: err.message }); // Modified Error response
+    res.status(500).json({ error: "Server error", message: err.message });
   }
 });
 
 app.post("/submitTest", (req, res) => {
-  console.log("Post api");
   const recivedData = req.body;
-  console.log(recivedData);
 
   res.json({
     message: "Data received successfully",
@@ -53,7 +51,6 @@ app.post("/submitTest", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  console.log("You are inside the / route");
   res.send("Route");
 });
 
@@ -61,6 +58,6 @@ app.get("/about", (req, res) => {
   res.send("Reached about");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on ${port} `);
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
 });
