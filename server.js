@@ -9,21 +9,17 @@ const corsOptions = {
   origin: [
     "https://jttfront-gamma.vercel.app",
     "https://jttfront-gamma.vercel.app/",
-    "https://jttbackend.vercel.app/submit",
-    "https://jttbackend.vercel.app/",
-    "https://jttbackend.onrender.com/submit",
-    "https://jttbackend.onrender.com",
-  ], // Allow only your frontend's origin
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow the http methods, you can just use 'GET,POST' for your needs
-  credentials: true, // For cookies, authorization headers, etc.
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  ],
+  methods: "GET,POST",
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 app.use(express.json());
 
 const User = require("./schema");
 
-const PORT = process.env.PORT || 5000; // Use dynamic port
+const PORT = process.env.PORT || 5000;
 
 connectDB();
 
