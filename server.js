@@ -11,6 +11,8 @@ const corsOptions = {
     "https://jttfront-gamma.vercel.app/",
     "https://jttbackend.vercel.app/submit",
     "https://jttbackend.vercel.app/",
+    "https://jttbackend.onrender.com/submit",
+    "https://jttbackend.onrender.com",
   ], // Allow only your frontend's origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow the http methods, you can just use 'GET,POST' for your needs
   credentials: true, // For cookies, authorization headers, etc.
