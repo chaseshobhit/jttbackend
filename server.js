@@ -6,7 +6,12 @@ const app = express();
 
 // Updated CORS options to allow specific origin, you can also set it to true to all origins
 const corsOptions = {
-  origin: "https://jttfront-gamma.vercel.app", // Allow only your frontend's origin
+  origin: [
+    "https://jttfront-gamma.vercel.app",
+    "https://jttfront-gamma.vercel.app/",
+    "https://jttbackend.vercel.app/submit",
+    "https://jttbackend.vercel.app/",
+  ], // Allow only your frontend's origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow the http methods, you can just use 'GET,POST' for your needs
   credentials: true, // For cookies, authorization headers, etc.
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
