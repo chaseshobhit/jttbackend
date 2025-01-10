@@ -4,16 +4,10 @@ require("dotenv").config();
 const cors = require("cors");
 const app = express();
 
-// Corrected CORS options for specific origin and methods
+// CORS options to allow all origins
 const corsOptions = {
-  origin: [
-    "https://jttfront-gamma.vercel.app",
-    "https://jttfront-gamma.vercel.app/",
-    "https://jttbackend.vercel.app/submit",
-    "https://jttfront-gamma.vercel.app",
-    "https://jttbackend.vercel.app/",
-  ],
-  methods: "GET,POST",
+  origin: "*", // Allows requests from any origin
+  methods: "GET,POST", // Or the specific methods you need
   credentials: true,
   optionsSuccessStatus: 200,
 };
