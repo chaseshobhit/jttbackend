@@ -9,6 +9,9 @@ const corsOptions = {
   origin: [
     "https://jttfront-gamma.vercel.app",
     "https://jttfront-gamma.vercel.app/",
+    "https://jttbackend.vercel.app/submit",
+    "https://jttfront-gamma.vercel.app",
+    "https://jttbackend.vercel.app/",
   ],
   methods: "GET,POST",
   credentials: true,
