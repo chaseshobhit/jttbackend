@@ -6,11 +6,12 @@ const app = express();
 
 // CORS options to allow all origins
 const corsOptions = {
-  origin: "*", // Allows requests from any origin
-  methods: "GET,POST", // Or the specific methods you need
+  origin: 'https://jttfront.onrender.com', // Be specific here!
+  methods: "GET,POST", 
   credentials: true,
   optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
 app.use(express.json());
 
